@@ -1,3 +1,7 @@
 # README
 
 This Rails application was created to benchmark the performance of assets being served up by Puma, nginx, etc.
+
+## Getting started
+
+On macOS, run `brew bundle` to install `k6`.

@@ -10,7 +10,9 @@
 <h2>Static assets in the <code>./public</code> directory</h2>
 
 <ul>
-  <% Dir.glob(Rails.root.join("public/**/*.*")).each do |path| %>
-    <li><%= link_to static_asset_url(path), static_asset_url(path) %></li>
+  <% public_asset_urls.each do |url| %>
+    <li><%= link_to url, url %></li>
   <% end %>
 </ul>
+
+<p>A JSON list of these assets is available at <%=link_to public_assets_url(format: :json), public_assets_url(format: :json) %></p>
