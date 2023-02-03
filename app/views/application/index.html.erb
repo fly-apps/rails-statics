@@ -3,9 +3,17 @@
 <p>This Rails application was built to benchmark the performance of Rails serving up static assets vs nginx, Apache, or other web servers.</p>
 
 <h2>Rails public file server configuration</h2>
-<p>
-  <code>Rails.configuration.public_file_server.inspect # => <%= Rails.configuration.public_file_server.inspect %></code>
-</p>
+
+<dl>
+  <dt>RubyVM::YJIT.enabled?</dt>
+  <dd><%= RubyVM::YJIT.enabled?.inspect %></dd>
+
+  <dt>Rails.configuration.public_file_server.inspect</dt>
+  <dd><%= Rails.configuration.public_file_server.inspect %></dd>
+
+  <dt>request.env["SERVER_SOFTWARE"]</dt>
+  <dd><%= request.env["SERVER_SOFTWARE"] %></dd>
+</dl>
 
 <h2>Static assets in the <code>./public</code> directory</h2>
 
