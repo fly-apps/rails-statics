@@ -1,0 +1,16 @@
+<h1>Rails static assets</h1>
+
+<p>This Rails application was built to benchmark the performance of Rails serving up static assets vs nginx, Apache, or other web servers.</p>
+
+<h2>Rails public file server configuration</h2>
+<p>
+  <code>Rails.configuration.public_file_server.inspect # => <%= Rails.configuration.public_file_server.inspect %></code>
+</p>
+
+<h2>Static assets in the <code>./public</code> directory</h2>
+
+<ul>
+  <% Dir.glob(Rails.root.join("public/**/*.*")).each do |path| %>
+    <li><%= link_to static_asset_url(path), static_asset_url(path) %></li>
+  <% end %>
+</ul>
